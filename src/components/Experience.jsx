@@ -5,7 +5,7 @@ import { PiMonitorDuotone } from 'react-icons/pi';
 const Experience = () => {
   return (
       <div className="border-l border-gray-300 dark:border-gray-600 py-16 px-4 md:px-10 text-white font-sans">
-          <h2 className="text-4xl font-bold text-center mb-10">Education</h2>
+          <h2 className="text-4xl font-bold text-center mb-10">Professional Experience</h2>
     
           <div className="relative max-w-5xl mx-auto border-l-2 border-purple-500 pl-10">
             {/* Icon circle on timeline */}
