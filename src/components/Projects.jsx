@@ -6,6 +6,8 @@ import car from "../assets/car.png";
 import chat from "../assets/chat.png";
 import bus from "../assets/bus.png";
 import youtube from "../assets/youtube.png";
+import techista from "../assets/techista.png";
+import vaidehiHolidays from "../assets/vaidehi.png";
 
 const projects = [
   {
@@ -61,7 +63,27 @@ const projects = [
     githubLink: "https://github.com/JESWIN100/youtube",
     liveLink: "https://youtube-six-ochre.vercel.app/",
     image: youtube
-  }
+  },
+   {
+  id: 7,
+  title: "Website for Techista",
+  description: "A modern and responsive website developed for Techista, a startup company. Built with React and Tailwind CSS to deliver a clean user experience and fast performance. Designed to showcase the brand, services, and mission effectively.",
+  technologies: ["React", "Node.js", "Material UI","Mongo DB", "Tailwind CSS ",],
+  githubLink: "#",
+  liveLink: "https://www.techistasolutions.in/",
+  image: techista
+},
+{
+  id: 8,
+  title: "Website for Vaidehi Holidays",
+  description: "A visually appealing and user-friendly website created for Vaidehi Holidays, a travel and tourism company. Designed to highlight tour packages, destinations, and booking features with a clean interface and responsive layout.",
+  technologies: ["React", "Node.js", "Material UI","Mongo DB", "Tailwind CSS ","React Router","Razorpay"],
+  githubLink: "#", // Replace if different
+  liveLink: "https://vaidehiholidays.in/", // Replace if different
+  image: vaidehiHolidays // Replace with your imported image
+}
+
+
 ];
 
 const Projects = () => {
