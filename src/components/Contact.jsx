@@ -1,7 +1,7 @@
 
 import { FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from "react-icons/md";
-import reume from "../assets/jeswin joseph.pdf";
+import resume from "../assets/jeswin_resume.pdf";
 import { useForm } from "react-hook-form"
 import axios from "axios";
 import { useState } from 'react';
@@ -43,95 +43,95 @@ const onSubmit = async (data) => {
 
 
   return (
-    <section id='contact'>
+    <section id='contact' className="pb-10">
       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center p-6">
         <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12">
           {/* Left Side: Social Links */}
-          <div className="flex flex-col justify-center">
-            <h2 className="text-4xl font-bold mb-4">Let's Connect</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mb-8 rounded" />
+         <div className="space-y-8">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+                Let's <span className="text-blue-600">Connect</span>
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 text-lg max-w-md">
+                Have a project in mind or just want to chat about tech? Feel free to reach out. I'm always open to new opportunities!
+              </p>
+            </div>
 
-            <div className="flex flex-wrap gap-4">
-              {/* GitHub Button */}
+            <div className="flex flex-wrap gap-3">
+              {[
+                { icon: <FaGithub />, label: "GitHub", href: "https://github.com/JESWIN100" },
+                { icon: <FaLinkedin />, label: "LinkedIn", href: "https://www.linkedin.com/in/jeswinjoseph-/" },
+                { icon: <MdEmail />, label: "Email", href: "mailto:jeswinjoseph893@gmail.com" },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-blue-500 dark:hover:border-blue-500 transition-all shadow-sm"
+                >
+                  <span className="text-blue-600">{link.icon}</span>
+                  <span className="text-sm font-medium dark:text-slate-200">{link.label}</span>
+                </a>
+              ))}
+              
               <a 
-                href="https://github.com/JESWIN100" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2 bg-[#1E1F29] rounded-full hover:bg-[#2A2B38] transition"
-              >
-                <FaGithub /> GitHub
-              </a>
-
-              {/* LinkedIn Button */}
-              <a 
-                href="https://www.linkedin.com/in/jeswinjoseph-/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2 bg-[#1E1F29] rounded-full hover:bg-[#2A2B38] transition"
-              >
-                <FaLinkedin /> LinkedIn
-              </a>
-
-              {/* Email Button */}
-              <a 
-                href="mailto:jeswinjoseph893@gmail.com" 
-                className="flex items-center gap-2 px-5 py-2 bg-[#1E1F29] rounded-full hover:bg-[#2A2B38] transition"
-              >
-                <MdEmail /> Email
-              </a>
-
-              {/* Download CV Button */}
-              <a 
-                href={reume} 
+                href={resume} 
                 download 
-                className="px-6 py-2 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-md hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-2"
+                className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20"
               >
-                <FaFileDownload /> Download CV
+                <FaFileDownload /> <span className="text-sm font-medium">Download CV</span>
               </a>
             </div>
           </div>
 
-          {/* Right Side: Contact Form */}
-          <div className="bg-[#1A1B25] p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-           
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
-                {...register("name")} 
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
-                {...register("email")} 
-              />
-              <textarea
-                rows="4"
-                placeholder="Your Message"
-                className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
-                {...register("message")} 
-              />
+          {/* Right Side: Contact Form Card */}
+          <div className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
+            <h3 className="text-2xl font-bold mb-8 dark:text-white">Send a Message</h3>
+            
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              <div className="space-y-1">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className={`w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border ${errors.name ? 'border-red-500' : 'border-slate-200 dark:border-slate-800'} rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all dark:text-white`}
+                  {...register("name", { required: "Name is required" })} 
+                />
+                {errors.name && <p className="text-red-500 text-xs pl-2">{errors.name.message}</p>}
+              </div>
+
+              <div className="space-y-1">
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className={`w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border ${errors.email ? 'border-red-500' : 'border-slate-200 dark:border-slate-800'} rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all dark:text-white`}
+                  {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } })} 
+                />
+                {errors.email && <p className="text-red-500 text-xs pl-2">{errors.email.message}</p>}
+              </div>
+
+              <div className="space-y-1">
+                <textarea
+                  rows="4"
+                  placeholder="How can I help you?"
+                  className={`w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border ${errors.message ? 'border-red-500' : 'border-slate-200 dark:border-slate-800'} rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all dark:text-white`}
+                  {...register("message", { required: "Message cannot be empty" })} 
+                />
+                {errors.message && <p className="text-red-500 text-xs pl-2">{errors.message.message}</p>}
+              </div>
+
               <button
-  type="submit"
-  disabled={loading}
-  className={`w-full py-3 rounded text-white font-semibold transition ${
-    loading
-      ? 'bg-gray-600 cursor-not-allowed'
-      : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90'
-  }`}
->
-  {loading ? "Sending..." : "Send Message"}
-</button>
-
-{alert && (
-  <div className="w-full p-4 text-sm text-green-100 bg-green-700 rounded-lg">
-    {alert}
-  </div>
-)}
-
+                type="submit"
+                disabled={loading}
+                className="w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 disabled:bg-slate-400 transition-all shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2"
+              >
+                {loading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : "Send Message"}
+              </button>
             </form>
           </div>
         </div>

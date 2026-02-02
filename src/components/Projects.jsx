@@ -10,15 +10,7 @@ import techista from "../assets/techista.png";
 import vaidehiHolidays from "../assets/vaidehi.png";
 
 const projects = [
-  {
-    id: 1,
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with React frontend, Node.js backend, and MongoDB database. Features include product search, cart functionality, and payment integration.",
-    technologies: ["Html", "Bootstrap", "MySql", "Node.js"],
-    githubLink: "https://github.com/JESWIN100/redshift_ecomerce",
-    // liveLink: "https://yourapp.com",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/c8c8c0211994803.Y3JvcCwzODM1LDMwMDAsMCww.jpg"
-  },
+  
   {
     id: 2,
     title: "Food Delivery Website",

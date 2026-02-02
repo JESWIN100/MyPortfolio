@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNode, FaPython, FaJava, FaDatabase, FaGitAlt, FaGithub } from 'react-icons/fa';
-import { SiTailwindcss, SiBootstrap, SiMongodb, SiMysql, SiPhp, SiArduino, SiPostman } from 'react-icons/si';
+import { SiTailwindcss, SiBootstrap, SiMongodb, SiMysql, SiPhp, SiArduino, SiPostman, SiNextdotjs, SiNativescript } from 'react-icons/si';
 import { IoLogoFigma } from "react-icons/io5";
 const Skills = () => {
   const skills = [
@@ -9,9 +9,10 @@ const Skills = () => {
     { name: 'JavaScript', icon: <FaJs /> },
     { name: 'React', icon: <FaReact /> },
     { name: 'Node.js', icon: <FaNode /> },
+    { name: 'Next.js', icon: <SiNextdotjs /> },
+    {name:'React Native', icon:<FaReact />},
     { name: 'TailwindCSS', icon: <SiTailwindcss /> },
     { name: 'Bootstrap', icon: <SiBootstrap /> },
-   
     { name: 'MongoDB', icon: <SiMongodb /> },
     { name: 'SQL', icon: <SiMysql /> },
      { name: 'Git', icon: <FaGitAlt /> },
